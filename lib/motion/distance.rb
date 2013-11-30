@@ -19,7 +19,7 @@ module Motion
         if location.horizontalAccuracy <= 5.0
           @total += location.distanceFromLocation(@last_location)
           @last_location = location
-          response = { total: total, location: location }
+          response = { total: @total, location: location }
 
           @callback.call response
         end
