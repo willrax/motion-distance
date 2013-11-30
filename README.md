@@ -1,24 +1,41 @@
 # motion-distance
 
-TODO: Write a gem description
+Easy distance tracking for RubyMotion projects.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'motion-distance'
+    gem "motion-distance"
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install motion-distance
-
 ## Usage
 
-TODO: Write usage instructions here
+Create a new instance of `Motion::Distance`.
+
+```ruby
+@distance = Motion::Distance.new
+```
+
+Now you can call `#get` to begin tracking any distance travelled. Each time the phone registers a location change
+you'll recieve a hash that contains the total distance travelled and current location.
+
+Distance is always returned in meters.
+
+```ruby
+@distance.get do |location|
+  puts location[:total]
+end
+```
+
+You can stop tracking location by calling:
+
+```ruby
+@distance.stop_updating
+```
 
 ## Contributing
 
