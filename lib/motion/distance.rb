@@ -11,7 +11,7 @@ module Motion
     def stop_updating
       location_manager.stopUpdatingLocation
 
-      @total_distance = 0
+      @total = 0
       @last_location = nil
       @callback = nil
     end
