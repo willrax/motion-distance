@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    motion-distance (0.1.0)
+    motion-layout (0.0.1)
+    rake (10.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  motion-distance
+  motion-layout
+  rake
