@@ -28,6 +28,17 @@ You must also specify an activity type. This will help the OS know when to pause
 @distance.activity_type = CLActivityTypeFitness
 ```
 
+You may also set a level of accuracy.
+
+```ruby
+KCLLocationAccuracyBestForNavigation
+KCLLocationAccuracyBest
+KCLLocationAccuracyNearestTenMeters
+KCLLocationAccuracyHundredMeters
+KCLLocationAccuracyKilometer
+KCLLocationAccuracyThreeKilometers
+```
+
 Now you can call `#get` to begin tracking any distance travelled. Each time the phone registers a location change
 you'll recieve a hash that contains the total distance travelled and current location.
 
