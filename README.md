@@ -31,12 +31,14 @@ You must also specify an activity type. This will help the OS know when to pause
 You may also set a level of accuracy.
 
 ```ruby
-KCLLocationAccuracyBestForNavigation
-KCLLocationAccuracyBest
-KCLLocationAccuracyNearestTenMeters
-KCLLocationAccuracyHundredMeters
-KCLLocationAccuracyKilometer
-KCLLocationAccuracyThreeKilometers
+# KCLLocationAccuracyBestForNavigation
+# KCLLocationAccuracyBest
+# KCLLocationAccuracyNearestTenMeters
+# KCLLocationAccuracyHundredMeters
+# KCLLocationAccuracyKilometer
+# KCLLocationAccuracyThreeKilometers
+
+@distance.accuracy = KCLLocationAccuracyBest
 ```
 
 Now you can call `#get` to begin tracking any distance travelled. Each time the phone registers a location change
