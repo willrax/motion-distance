@@ -16,8 +16,16 @@ And then execute:
 
 Create a new instance of `Motion::Distance`.
 
+You must also specify an activity type. This will help the OS know when to pause and resume updates that will help save battery.
+
 ```ruby
+# CLActivityTypeOther,
+# CLActivityTypeAutomotiveNavigation,
+# CLActivityTypeFitness,
+# CLActivityTypeOtherNavigation,
+
 @distance = Motion::Distance.new
+@distance.activity_type = CLActivityTypeFitness
 ```
 
 Now you can call `#get` to begin tracking any distance travelled. Each time the phone registers a location change
