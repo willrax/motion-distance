@@ -1,5 +1,5 @@
 #-*- encoding: utf-8 -*-
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 Gem::Specification.new do |spec|
   spec.name          = "motion-distance"
@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["git@willrax.com"]
   spec.description   = %q{Easy distance tracking for iOS RubyMotion projects.}
   spec.summary       = %q{Easy distance tracking for iOS RubyMotion projects.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/willrax/motion-distance"
   spec.license       = "MIT"
 
   files = []
