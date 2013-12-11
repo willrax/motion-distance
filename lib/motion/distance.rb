@@ -39,7 +39,7 @@ module Motion
       @location_manager ||=
         begin
           manager = CLLocationManager.alloc.init
-          manager.desiredAccuracy = self.accuracy ||= KCLLocationAccuracyBest
+          manager.desiredAccuracy = self.accuracy || KCLLocationAccuracyBest
           manager.activityType = self.activity_type || CLActivityTypeOther
           manager.delegate = self
           manager
