@@ -1,6 +1,13 @@
 module Motion
   class Distance
-    attr_accessor :activity_type, :accuracy
+    attr_accessor :activity_type, :accuracy, :distance_filter
+
+    def initialize(args = {})
+      self.accuracy = args[:accuracy] || KCLLocationAccuracyBest
+      self.activity_type = args[:activity_type] || CLActivityTypeOther
+      self.distance_filter = args[:distance_filter] || KCLDistanceFilterNone
+      self
+    end
 
     def get(&block)
       @callback = block
@@ -39,8 +46,9 @@ module Motion
       @location_manager ||=
         begin
           manager = CLLocationManager.alloc.init
-          manager.desiredAccuracy = self.accuracy ||= KCLLocationAccuracyBest
-          manager.activityType = self.activity_type || CLActivityTypeOther
+          manager.desiredAccuracy = self.accuracy
+          manager.activityType = self.activity_type
+          manager.distanceFilter = self.distance_filter
           manager.delegate = self
           manager
         end
